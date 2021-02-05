@@ -21,7 +21,7 @@
 .header{
   grid-area: header;
   display: grid;
-  background-color: darkgray;
+  background-color: #ececec;
 }
 .header img{
   max-width: 60px;
@@ -51,4 +51,7 @@
 
 .footer{
   grid-area: footer;
+  display: grid;
+  background-color: #ececec;
+  align-items: center;
 }

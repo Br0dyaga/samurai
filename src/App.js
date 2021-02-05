@@ -6,7 +6,7 @@ let App = () => {
   return (
         <div className="app-wrapper">
           <header className="header">
-            <img src={logo} />
+            <img src={logo} alt='logo'/>
             </header>
           <nav className="nav">
             <ul>
@@ -19,7 +19,7 @@ let App = () => {
           </nav>
           <div className="content">
             <div>
-              <img src={pict} />
+              <img src={pict} alt='pict'/>
             </div>
             <div>ava + desc</div>
             <div>my post
