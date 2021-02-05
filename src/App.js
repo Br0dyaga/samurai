@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import logo from './logo.png';
+import pict from './pict.png'
 import './App.css';
 
 let App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <div className="app-wrapper">
+          <header className="header">
+            <img src={logo} />
+            </header>
+          <nav className="nav">
+            <ul>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Messages</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Music</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </nav>
+          <div className="content">
+            <div>
+              <img src={pict} />
+            </div>
+            <div>ava + desc</div>
+            <div>my post
+              <div>new post</div>
+              <div>
+                <div>post2</div>
+                <div>post2</div>
+              </div>
+            </div>
+          </div>
+          <footer className="footer">Footer</footer>
+        </div>
   );
 }
 
