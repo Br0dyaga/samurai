@@ -20,6 +20,7 @@ let App = () => {
           <div className="content">
             <div>
               <img src={pict} alt='pict'/>
+              
             </div>
             <div>ava + desc</div>
             <div>my post
