@@ -1,18 +1,20 @@
 import React from 'react';
 import pict from "./pict.png";
 import ava from "./tux.png";
+import s from './Profile.module.css';
+import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
-    return(
-        <div className="content">
+    return (
+        <div className={s.content}>
             <div>
                 <img src={pict} alt='pict'/>
             </div>
-            <div className="profile-title">
-                <div className="profile-title-ava">
+            <div className={s.title}>
+                <div className={s.title__ava}>
                     <img src={ava} alt='ava' title='ava'/>
                 </div>
-                <div className="profile-title-desc">
+                <div className={s.title__desc}>
                     <h1>Anton E.</h1>
                     <h3>Date birth: 11 july</h3>
                     <h3>City: Petropavlovsk</h3>
@@ -21,12 +23,7 @@ const Profile = () => {
                 </div>
             </div>
             <div>
-                <h2>My posts</h2>
-                <div>new post</div>
-                <div>
-                    <div>post2</div>
-                    <div>post2</div>
-                </div>
+                <MyPosts />
             </div>
         </div>
     );
