@@ -1,0 +1,63 @@
+.content {
+    grid-area: content;
+    align-content: center;
+    display: grid;
+    width: 100%;
+    color: #939393;
+    padding: 10px;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    align-items: center;
+}
+
+.title__ava {
+    justify-self: center;
+}
+
+.title__ava img {
+    max-width: 128px;
+    max-height: 128px;
+}
+
+.title__desc {
+    margin: 10px;
+}
+
+.title h1 {
+    padding-bottom: 20px;
+}
+
+.newpost {
+    margin: 10px;
+    text-align: right;
+}
+
+.newpost textarea {
+    width: 100%;
+    padding: 5px;
+}
+
+.newpost button {
+    margin: 5px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.mypost {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.mypost + .mypost {
+    margin-top: 20px;
+}

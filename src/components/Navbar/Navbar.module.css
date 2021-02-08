@@ -1,0 +1,28 @@
+.nav {
+    grid-area: nav;
+    padding: 10px;
+    background-color: var(--main-bg-color);
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li:last-child {
+    margin-top: 30px;
+}
+
+.item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.active {
+    font-weight: 700;
+    color: #999;
+}
+
+.item:hover {
+    color: #999;
+}

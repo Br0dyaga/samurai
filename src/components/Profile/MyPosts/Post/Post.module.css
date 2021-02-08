@@ -1,0 +1,28 @@
+.post {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.post + .post {
+    margin-top: 20px;
+}
+
+.ava{
+    max-height: 50px;
+    max-width: 50px;
+    border-radius: 50%;
+    justify-self: center;
+}
+
+.like{
+    display: grid;
+    grid-template-columns: 25px 25px;
+    grid-gap: 5px;
+    justify-content: space-between;
+}
+
+.like img{
+    /*max-width: 25px;*/
+}

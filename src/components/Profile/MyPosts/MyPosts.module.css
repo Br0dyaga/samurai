@@ -1,0 +1,15 @@
+.newpost {
+    margin: 10px;
+    text-align: right;
+}
+
+.newpost textarea {
+    width: 100%;
+    padding: 5px;
+}
+
+.newpost button {
+    margin: 5px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}

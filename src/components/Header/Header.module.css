@@ -1,0 +1,11 @@
+.header {
+    grid-area: header;
+    display: grid;
+    background-color: var(--main-bg-color);
+}
+
+.header img {
+    max-width: 60px;
+    align-self: center;
+    padding-left: 10px;
+}
