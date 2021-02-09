@@ -1,6 +1,6 @@
 .post {
     display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-columns: 1fr 10fr auto;
     align-items: center;
     grid-gap: 10px;
 }
@@ -18,11 +18,16 @@
 
 .like{
     display: grid;
-    grid-template-columns: 25px 25px;
+    grid-template-columns: auto 25px;
     grid-gap: 5px;
-    justify-content: space-between;
+    justify-content: end;
+    align-items: center;
 }
 
 .like img{
     /*max-width: 25px;*/
+}
+
+.count{
+    font-size: .5rem;
 }

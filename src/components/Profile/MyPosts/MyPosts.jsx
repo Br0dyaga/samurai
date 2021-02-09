@@ -13,11 +13,11 @@ const MyPosts = () => {
                 </form>
             </div>
             <div>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message='First message' like='10' dislike='15'/>
+                <Post message='Second message' like='8' dislike='1'/>
+                <Post message='Third message' like='99' dislike='32'/>
+                <Post message='Other message' like='10000' dislike='1233'/>
+                <Post message='Some once message' like='1' dislike='15'/>
             </div>
         </div>
     );

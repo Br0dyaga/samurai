@@ -4,14 +4,14 @@ import s from './Post.module.css';
 import like from "./like.png";
 import dislike from "./dislike.png";
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={s.post}>
             <img className={s.ava} src={ava} alt='ava' title='ava'/>
-            <p>post</p>
+            <p> {props.message} </p>
             <div className={s.like}>
-                <img src={like} alt='LIKE' title="LIKE" />
-                <img src={dislike} alt='disLIKE' title="disLIKE" />
+                <span className={s.count}>{props.like}</span> <img src={like} alt='LIKE' title="LIKE"/>
+                <span className={s.count}>{props.dislike}</span> <img src={dislike} alt='disLIKE' title="disLIKE"/>
             </div>
         </div>
     );

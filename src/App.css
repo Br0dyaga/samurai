@@ -31,5 +31,13 @@ h3 {
     grid-template-rows: 60px 1fr 60px;
     /*grid-gap: 10px;*/
     max-width: 1240px;
+    height: 100vh;
     margin: 0 auto;
+}
+
+.app-wrapper-content {
+    grid-area: content;
+    width: 100%;
+    color: #939393;
+    padding: 10px;
 }

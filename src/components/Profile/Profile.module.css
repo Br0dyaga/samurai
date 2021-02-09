@@ -1,10 +1,5 @@
 .content {
-    grid-area: content;
-    align-content: center;
     display: grid;
-    width: 100%;
-    color: #939393;
-    padding: 10px;
 }
 
 .content img {
