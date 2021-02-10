@@ -1,4 +1,54 @@
 .content {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    height: 100%;
+}
+
+.dialogs {
+    padding: 10px;
+    border-right: #939393 solid 2px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+}
+
+.dialog {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: 700;
+    border-left: #939393 solid 1px;
+    border-bottom: #939393 solid 1px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+}
+
+.messages {
+    padding: 10px;
+    align-self: end;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+.messageTo {
+    border-right: #939393 solid 1px;
+    border-bottom: #939393 solid 1px;
+    text-align: right;
+}
+
+.messageFrom {
+    border-left: #939393 solid 1px;
+    border-bottom: #939393 solid 1px;
+    text-align: left;
+}
+
+.message + .message {
+    margin-top: 10px;
 }

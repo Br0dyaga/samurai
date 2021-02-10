@@ -22,9 +22,9 @@ const Profile = () => {
                     <h3>WebSite: localhost :-)</h3>
                 </div>
             </div>
-            <div>
-                <MyPosts />
-            </div>
+
+            <MyPosts/>
+
         </div>
     );
 }
