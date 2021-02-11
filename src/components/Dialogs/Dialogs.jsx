@@ -2,41 +2,56 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
 
+const DialogItem = (props) => {
+	let path = '/dialogs/' + props.id;
+	return (
+		<NavLink to={path} className={s.dialog} activeClassName={s.active}>{props.name}</NavLink>
+	)
+}
+
+const Message = (props) => {
+	switch (props.type) {
+		case 'From':
+			return (
+				<div className={s.message + ' ' + s.From}>
+					{props.message}
+				</div>
+			);
+			break;
+		case 'To':
+			return (
+				<div className={s.message + ' ' + s.To}>
+					{props.message}
+				</div>
+			);
+			break;
+	}
+}
+
 const Dialogs = (props) => {
-
-    let Users = ['Name 1', 'Name 2', 'Name 3', 'Name 4', 'Name 5', 'Name 6'];
-
-    const listUser = Users.map((user, index) =>
-        <NavLink to={'/dialogs/' + index} className={s.dialog} activeClassName={s.active}>{user}</NavLink>
-    )
-
-    return (
-        <div className={s.content}>
-            <div className={s.dialogs}>
-                {listUser}
-                {/*<NavLink to='/dialogs/1' className={s.dialog} activeClassName={s.active}> Name 1 </NavLink>*/}
-                {/*<NavLink to='/dialogs/2' className={s.dialog} activeClassName={s.active}> Name 2 </NavLink>*/}
-                {/*<NavLink to='/dialogs/3' className={s.dialog} activeClassName={s.active}> Name 3 </NavLink>*/}
-                {/*<NavLink to='/dialogs/4' className={s.dialog} activeClassName={s.active}> Name 4 </NavLink>*/}
-                {/*<NavLink to='/dialogs/5' className={s.dialog} activeClassName={s.active}> Name 5 </NavLink>*/}
-                {/*<NavLink to='/dialogs/6' className={s.dialog} activeClassName={s.active}> Name 6 </NavLink>*/}
-            </div>
-            <div className={s.messages}>
-                <div className={s.message + ' ' + s.messageFrom}>
-                    Message. Some text.... More text
-                </div>
-                <div className={s.message + ' ' + s.messageFrom}>
-                    Message. Some text.... More text
-                </div>
-                <div className={s.message + ' ' + s.messageTo}>
-                    Message. Some text.... More text
-                </div>
-                <div className={s.message + ' ' + s.messageFrom}>
-                    Message. Some text.... More text
-                </div>
-            </div>
-        </div>
-    )
+	return (
+		<div className={s.content}>
+			<div className={s.dialogs}>
+				<DialogItem name='Name 1' id='1'/>
+				<DialogItem name='Name 2' id='2'/>
+				<DialogItem name='Name 3' id='3'/>
+				<DialogItem name='Name 4' id='4'/>
+				<DialogItem name='Name 5' id='5'/>
+				<DialogItem name='Name 6' id='6'/>
+			</div>
+			<div className={s.messages}>
+				<Message message='Message. Some text.... More text' type='From'/>
+				<Message message='Message. Some text.... More text' type='From'/>
+				<Message message='Message. Some text.... More text' type='To'/>
+				<Message message='Message. Some text.... More text' type='From'/>
+				<Message message='Message. Some text.... More text' type='To'/>
+				<Message message='Message. Some text.... More text' type='To'/>
+				<Message message='Message. Some text.... More text' type='From'/>
+				<Message message='Message. Some text.... More text' type='From'/>
+				<Message message='Message. Some text.... More text' type='To'/>
+			</div>
+		</div>
+	)
 }
 
 export default Dialogs;
