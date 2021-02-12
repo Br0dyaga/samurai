@@ -1,3 +1,7 @@
+.listPosts{
+    overflow-y: auto;
+    height: 200px;
+}
 .newpost {
     margin: 10px;
     text-align: right;

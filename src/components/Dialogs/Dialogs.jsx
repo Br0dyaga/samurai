@@ -29,26 +29,41 @@ const Message = (props) => {
 }
 
 const Dialogs = (props) => {
+
+	let dialogsData = [
+		{id: 1, name: 'Name 1'},
+		{id: 2, name: 'Name 2'},
+		{id: 3, name: 'Name 3'},
+		{id: 4, name: 'Name 4'},
+		{id: 5, name: 'Name 5'},
+		{id: 6, name: 'Name 6'}
+	];
+
+	let dialogList = dialogsData.map((dialog,index) =>
+		<DialogItem key={'dialog'+index} name={dialog.name} id={dialog.id}/>
+	);
+
+	let messagesData = [
+		{id: 1, message: 'Message. Some text.... More text', type: 'From'},
+		{id: 2, message: 'Message. Some text.... More text', type: 'From'},
+		{id: 3, message: 'Message. Some text.... More text', type: 'From'},
+		{id: 4, message: 'Message. Some text.... More text', type: 'To'},
+		{id: 5, message: 'Message. Some text.... More text', type: 'From'},
+		{id: 6, message: 'Message. Some text.... More text', type: 'To'},
+		{id: 7, message: 'Message. Some text.... More text', type: 'To'}
+	];
+
+	let messageList = messagesData.map((message, index) =>
+		<Message key={'message'+index} message={message.message} type={message.type}/>
+	);
+
 	return (
 		<div className={s.content}>
 			<div className={s.dialogs}>
-				<DialogItem name='Name 1' id='1'/>
-				<DialogItem name='Name 2' id='2'/>
-				<DialogItem name='Name 3' id='3'/>
-				<DialogItem name='Name 4' id='4'/>
-				<DialogItem name='Name 5' id='5'/>
-				<DialogItem name='Name 6' id='6'/>
+				{ dialogList }
 			</div>
 			<div className={s.messages}>
-				<Message message='Message. Some text.... More text' type='From'/>
-				<Message message='Message. Some text.... More text' type='From'/>
-				<Message message='Message. Some text.... More text' type='To'/>
-				<Message message='Message. Some text.... More text' type='From'/>
-				<Message message='Message. Some text.... More text' type='To'/>
-				<Message message='Message. Some text.... More text' type='To'/>
-				<Message message='Message. Some text.... More text' type='From'/>
-				<Message message='Message. Some text.... More text' type='From'/>
-				<Message message='Message. Some text.... More text' type='To'/>
+				{ messageList }
 			</div>
 		</div>
 	)
