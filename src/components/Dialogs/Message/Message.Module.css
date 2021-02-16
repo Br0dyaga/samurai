@@ -1,0 +1,21 @@
+.message {
+	padding: 10px;
+	border-radius: 10px;
+	font-style: italic;
+}
+
+.To {
+	border-right: #939393 solid 1px;
+	border-bottom: #939393 solid 1px;
+	text-align: right;
+}
+
+.From {
+	border-left: #939393 solid 1px;
+	border-bottom: #939393 solid 1px;
+	text-align: left;
+}
+
+.message + .message {
+	margin-top: 10px;
+}
