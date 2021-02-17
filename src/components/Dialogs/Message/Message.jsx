@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Message.Module.css';
+import s from './Message.module.css';
 
 const Message = (props) => {
 	switch (props.type) {

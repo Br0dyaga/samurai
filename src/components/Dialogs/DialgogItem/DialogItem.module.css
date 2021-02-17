@@ -1,0 +1,25 @@
+.dialog {
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	justify-content: start;
+	gap: 1rem;
+}
+
+.active {
+	font-weight: 700;
+	border-left: #939393 solid 1px;
+	border-bottom: #939393 solid 1px;
+	border-radius: 0 10px;
+	background-color: #f7f7f7;
+}
+
+.ava{
+	max-height: 30px;
+	max-width: 30px;
+	border-radius: 50%;
+	justify-self: center;
+}

@@ -1,0 +1,31 @@
+.wrapper{
+	margin-top: 3rem;
+	border: solid 1px #d5d5d5;
+	padding: .5rem;
+	border-radius: 1rem;
+}
+
+.title{
+	color: #fff;
+	padding-bottom: 1rem;
+}
+
+.usersWrapper{
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem;
+	justify-content: center;
+}
+.user{
+	display: grid;
+	text-decoration: none;
+}
+.ava{
+	max-height: 30px;
+	max-width: 30px;
+	border-radius: 50%;
+	justify-self: center;
+}
+.name{
+	font-size: .8rem;
+}

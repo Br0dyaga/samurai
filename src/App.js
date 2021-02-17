@@ -12,16 +12,15 @@ import Footer from "./components/Footer/Footer";
 
 
 let App = (props) => {
-
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
 				<Header/>
-				<Navbar/>
+				<Navbar users={props.state.dialogsPage.dialogs}/>
 				<div className='app-wrapper-content'>
-					<Redirect from='/' to='/profile'/>
-					<Route path='/profile' render={() => <Profile posts={props.posts}/>}/>
-					<Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+					{/*<Redirect exact from='/' to='/profile'/>*/}
+					<Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
+					<Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
 					<Route path='/news' component={News}/>
 					<Route path='/music' component={Music}/>
 					<Route path='/settings' component={Settings}/>
