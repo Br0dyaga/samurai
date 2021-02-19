@@ -1,0 +1,17 @@
+.inputMessage {
+	margin-top: 1rem;
+	width: 100%;
+	display: grid;
+	grid-gap: .5rem;
+	grid-template-columns: auto 50px;
+}
+
+.inputMessage textarea {
+	padding: .5rem;
+	line-height: 1rem;
+	resize: none;
+}
+
+.inputMessage button {
+	font-size: 2rem;
+}

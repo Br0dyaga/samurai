@@ -13,7 +13,6 @@ import Footer from "./components/Footer/Footer";
 
 let App = (props) => {
 	return (
-		<BrowserRouter>
 			<div className="app-wrapper">
 				<Header/>
 				<Navbar users={props.state.dialogsPage.dialogs}/>
@@ -27,7 +26,6 @@ let App = (props) => {
 				</div>
 				<Footer/>
 			</div>
-		</BrowserRouter>
 	);
 }
 

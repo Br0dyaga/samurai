@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from "./logo.png";
 import s from './Header.module.css';
 
 const Header = () => {
+
+    let logoPath = window.location.origin + '/logo512.png';
+
     return (
         <header className={s.header}>
-            <img src={logo} alt='logo'/>
+            <img src={logoPath} alt='logo'/> Samurai 1.0
         </header>
     );
 }

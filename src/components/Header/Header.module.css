@@ -2,6 +2,10 @@
     grid-area: header;
     display: grid;
     background-color: var(--main-bg-color);
+    grid-template-columns: max-content auto;
+    align-items: center;
+    gap: 1rem;
+
 }
 
 .header img {

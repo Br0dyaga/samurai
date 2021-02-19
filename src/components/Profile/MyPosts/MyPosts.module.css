@@ -1,6 +1,7 @@
 .listPosts{
     overflow-y: auto;
     height: 200px;
+    margin-top: 2rem;
 }
 .newpost {
     margin: 10px;
