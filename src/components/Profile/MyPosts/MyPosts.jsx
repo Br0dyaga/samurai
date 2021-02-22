@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
-import InputMessage from "../../InputMessage/InputMessage";
+import AddNewPost from "./AddNewPost/AddNewPost";
 
 const MyPosts = (props) => {
 
@@ -13,12 +13,7 @@ const MyPosts = (props) => {
 		<div>
 			<h2>My posts</h2>
 			<div>
-				<InputMessage />
-				{/*<div className={s.newpost} id='addPost'>*/}
-				{/*	<textarea ref={newPostTextElement} placeholder='Print text here...' required/>*/}
-
-				{/*	<button onClick={addPost}>Public</button>*/}
-				{/*</div>*/}
+				<AddNewPost addPost={props.addPost}/>
 			</div>
 			<div className={s.listPosts}>
 				{postsElement}

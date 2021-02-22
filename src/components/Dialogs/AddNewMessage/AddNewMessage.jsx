@@ -1,12 +1,14 @@
 import React from 'react';
-import s from "./InputMessage.module.css";
+import s from "./AddNewMessage.module.css";
 
-const InputMessage = () => {
+const AddNewMessage = (props) => {
 
 	let textMessage = React.createRef();
 	let addMessage = () => {
 		if (!(textMessage.current.value=='')){
+			// props.addPost(textMessage.current.value);
 			alert(textMessage.current.value)
+			textMessage.current.value = '';
 		}else{
 			alert('Введите сообщение')
 		}
@@ -20,4 +22,4 @@ const InputMessage = () => {
 	)
 }
 
-export default InputMessage;
+export default AddNewMessage;

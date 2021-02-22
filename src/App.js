@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Redirect} from 'react-router-dom';
+import {Redirect, Route} from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -9,6 +9,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Footer from "./components/Footer/Footer";
+import {addPost} from "./redux/state";
 
 
 let App = (props) => {
@@ -17,8 +18,11 @@ let App = (props) => {
 				<Header/>
 				<Navbar users={props.state.dialogsPage.dialogs}/>
 				<div className='app-wrapper-content'>
-					{/*<Redirect exact from='/' to='/profile'/>*/}
-					<Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
+					<Redirect exact from='/' to='/profile'/>
+					<Route path='/profile' render={() => <Profile
+						state={props.state.profilePage}
+						addPost={props.addPost}
+					/>}/>
 					<Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
 					<Route path='/news' component={News}/>
 					<Route path='/music' component={Music}/>
