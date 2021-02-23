@@ -54,10 +54,7 @@ export let changePostText = (newPostText) => {
 };
 
 let disableBntPost = () => {
-	if (!(state.profilePage.newPostText == '')) {
-		state.profilePage.disableBntPost = false
-	} else {
-		state.profilePage.disableBntPost = true
-	}
+	state.profilePage.disableBntPost = (state.profilePage.newPostText === '');
 }
+
 export default state;
