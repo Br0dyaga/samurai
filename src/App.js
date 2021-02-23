@@ -9,8 +9,6 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Footer from "./components/Footer/Footer";
-import {addPost} from "./redux/state";
-
 
 let App = (props) => {
 	return (
@@ -20,8 +18,9 @@ let App = (props) => {
 				<div className='app-wrapper-content'>
 					<Redirect exact from='/' to='/profile'/>
 					<Route path='/profile' render={() => <Profile
-						state={props.state.profilePage}
+						profilePage={props.state.profilePage}
 						addPost={props.addPost}
+						changeNewPost={props.changeNewPost}
 					/>}/>
 					<Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
 					<Route path='/news' component={News}/>

@@ -13,7 +13,10 @@ const MyPosts = (props) => {
 		<div>
 			<h2>My posts</h2>
 			<div>
-				<AddNewPost addPost={props.addPost}/>
+				<AddNewPost addPost={props.addPost}
+							newPostText={props.newPostText}
+							disableBntPost={props.disableBntPost}
+							changeNewPost={props.changeNewPost}/>
 			</div>
 			<div className={s.listPosts}>
 				{postsElement}
