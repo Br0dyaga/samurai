@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Message.module.css';
 
 const Message = (props) => {
+	// eslint-disable-next-line default-case
 	switch (props.type) {
 		case 'From':
 			return (
@@ -9,14 +10,12 @@ const Message = (props) => {
 					{props.message}
 				</div>
 			);
-			break;
 		case 'To':
 			return (
 				<div className={s.message + ' ' + s.To}>
 					{props.message}
 				</div>
 			);
-			break;
 	}
 }
 

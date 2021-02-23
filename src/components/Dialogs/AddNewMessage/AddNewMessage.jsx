@@ -1,20 +1,19 @@
 import React from 'react';
 import s from "./AddNewMessage.module.css";
 
-const AddNewMessage = (props) => {
+const AddNewMessage = () => {
 
 	let textMessage = React.createRef();
 	let addMessage = () => {
-		if (!(textMessage.current.value=='')){
-			// props.addPost(textMessage.current.value);
+		if (!(textMessage.current.value === '')) {
 			alert(textMessage.current.value)
 			textMessage.current.value = '';
-		}else{
+		} else {
 			alert('Введите сообщение')
 		}
 	};
 
-	return(
+	return (
 		<div className={s.inputMessage}>
 			<textarea ref={textMessage} placeholder='Введите сообщение...' rows='1'/>
 			<button onClick={addMessage}>&#8629;</button>
