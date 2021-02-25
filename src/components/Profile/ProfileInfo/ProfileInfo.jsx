@@ -4,7 +4,9 @@ import s from './ProfileInfo.module.css'
 import ava from ".././tux.png";
 
 const ProfileInfo = () => {
+	document.title = 'Samurai - Профиль';
 	return(
+
 		<div>
 			<div className={s.profile__pict}>
 				<img src={pict} alt='pict'/>

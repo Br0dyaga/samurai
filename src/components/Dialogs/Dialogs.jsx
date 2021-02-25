@@ -5,7 +5,7 @@ import Message from "./Message/Message";
 import AddNewMessage from "./AddNewMessage/AddNewMessage";
 
 const Dialogs = (props) => {
-
+	document.title = 'Samurai - Сообщения';
 	let dialogsElement = props.state.dialogs.map((d, i) =>
 		<DialogItem key={`dialog${i}`} name={d.name} id={d.id}/>
 	);

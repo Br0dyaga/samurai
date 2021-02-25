@@ -11,24 +11,28 @@ import Settings from './components/Settings/Settings';
 import Footer from "./components/Footer/Footer";
 
 let App = (props) => {
+	debugger;
 	return (
-			<div className="app-wrapper">
-				<Header/>
-				<Navbar users={props.state.dialogsPage.dialogs}/>
-				<div className='app-wrapper-content'>
-					<Redirect exact from='/' to='/profile'/>
-					<Route path='/profile' render={() => <Profile
-						profilePage={props.state.profilePage}
-						addPost={props.addPost}
-						changeNewPost={props.changeNewPost}
-					/>}/>
-					<Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
-					<Route path='/news' component={News}/>
-					<Route path='/music' component={Music}/>
-					<Route path='/settings' component={Settings}/>
-				</div>
-				<Footer/>
+		<div className="app-wrapper">
+			<Header/>
+			<Navbar users={props.state.dialogsPage.dialogs}/>
+			<div className='app-wrapper-content'>
+				<Redirect exact from='/' to='/profile'/>
+				<Route path='/profile' render={() => <Profile
+					posts={props.state.profilePage.posts }
+					statusBtnPost={props.state.profilePage.disableBntPost}
+					newPostText={props.state.profilePage.newPostText}
+					dispatch={props.dispatch}
+				/>}/>
+				<Route path='/dialogs' render={() => <Dialogs
+					state={props.state.dialogsPage}
+				/>}/>
+				<Route path='/news' component={News}/>
+				<Route path='/music' component={Music}/>
+				<Route path='/settings' component={Settings}/>
 			</div>
+			<Footer/>
+		</div>
 	);
 }
 
