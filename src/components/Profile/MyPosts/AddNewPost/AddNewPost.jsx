@@ -1,23 +1,24 @@
 import React from 'react';
 import s from "./AddNewPost.module.css";
+import {addPostActionCreator, changePostTextActionCreator} from "../../../../redux/state";
 
 const AddNewPost = (props) => {
-	let textMessage = React.createRef();
-
+	let newPostText = props.newPostText;
+	let statusBtnPost = props.statusBtnPost;
 	let addNewPost = () => {
-		props.dispatch({type: 'ADD-POST'});
+		props.dispatch(addPostActionCreator());
 	};
 
-	let onPostChange = () => {
-		let newText = textMessage.current.value;
-		props.dispatch({type: 'CHANGE-POST-TEXT', newText: newText});
+	let onPostChange = (e) => {
+		let newText = e.target.value;
+		props.dispatch(changePostTextActionCreator(newText));
 	}
 
 	return (
 		<div className={s.inputMessage}>
-			<textarea onChange={onPostChange} ref={textMessage} placeholder='Введите сообщение...'
-					  rows='1' value={props.newPostText}/>
-				<button onClick={addNewPost} disabled={props.statusBtnPost}>&#8629;</button>
+			<textarea onChange={onPostChange} placeholder='Введите сообщение...'
+					  rows='1' value={newPostText}/>
+			<button onClick={addNewPost} disabled={statusBtnPost}>&#8629;</button>
 		</div>
 	)
 }

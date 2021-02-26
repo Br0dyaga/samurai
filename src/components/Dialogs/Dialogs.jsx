@@ -9,7 +9,7 @@ const Dialogs = (props) => {
 	let dialogsElement = props.state.dialogs.map((d, i) =>
 		<DialogItem key={`dialog${i}`} name={d.name} id={d.id}/>
 	);
-
+debugger;
 	let messagesElement = props.state.messages.map((m, i) =>
 		<Message key={`message${i}`} message={m.message} type={m.type}/>
 	);
@@ -20,8 +20,10 @@ const Dialogs = (props) => {
 				{dialogsElement}
 			</div>
 			<div className={s.messages}>
-				{messagesElement}
-				<AddNewMessage/>
+				{ messagesElement }
+				<AddNewMessage newMessageText={props.state.newMessageText}
+							   statusBtnMessage={props.state.disableBntMessage}
+							   dispatch={props.dispatch}/>
 			</div>
 		</div>
 	)

@@ -19,13 +19,12 @@ let App = (props) => {
 			<div className='app-wrapper-content'>
 				<Redirect exact from='/' to='/profile'/>
 				<Route path='/profile' render={() => <Profile
-					posts={props.state.profilePage.posts }
-					statusBtnPost={props.state.profilePage.disableBntPost}
-					newPostText={props.state.profilePage.newPostText}
+					state={props.state.profilePage}
 					dispatch={props.dispatch}
 				/>}/>
 				<Route path='/dialogs' render={() => <Dialogs
 					state={props.state.dialogsPage}
+					dispatch={props.dispatch}
 				/>}/>
 				<Route path='/news' component={News}/>
 				<Route path='/music' component={Music}/>

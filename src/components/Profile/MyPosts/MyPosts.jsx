@@ -5,7 +5,7 @@ import AddNewPost from "./AddNewPost/AddNewPost";
 
 const MyPosts = (props) => {
 
-	let postsElement = props.posts.map((p, i) =>
+	let postsElement = props.state.posts.map((p, i) =>
 		<Post key={`post${i}`} message={p.message} like={p.like} dislike={p.dislike}/>
 	);
 
@@ -14,8 +14,8 @@ const MyPosts = (props) => {
 			<h2>My posts</h2>
 			<div>
 				<AddNewPost
-					newPostText={props.newPostText}
-					statusBtnPost={props.statusBtnPost}
+					newPostText={props.state.newPostText}
+					statusBtnPost={props.state.disableBntPost}
 					dispatch={props.dispatch}
 				/>
 			</div>

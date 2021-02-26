@@ -1,22 +1,23 @@
 import React from 'react';
 import s from "./AddNewMessage.module.css";
+import {addMessageActionCreator, changeMessageTextActionCreator} from "../../../redux/state";
 
-const AddNewMessage = () => {
-
-	let textMessage = React.createRef();
-	let addMessage = () => {
-		if (!(textMessage.current.value === '')) {
-			alert(textMessage.current.value)
-			textMessage.current.value = '';
-		} else {
-			alert('Введите сообщение')
-		}
-	};
+const AddNewMessage = (props) => {
+	let newMessageText = props.newMessageText;
+	let statusBtnMessage = props.statusBtnMessage;
+	let addNewMessage = () => {
+		props.dispatch(addMessageActionCreator());
+	}
+	let onMessageChange = (e) => {
+		let newText = e.target.value;
+		props.dispatch(changeMessageTextActionCreator(newText));
+	}
 
 	return (
 		<div className={s.inputMessage}>
-			<textarea ref={textMessage} placeholder='Введите сообщение...' rows='1'/>
-			<button onClick={addMessage}>&#8629;</button>
+			<textarea onChange={onMessageChange} placeholder='Введите сообщение...' rows='1'
+					  value={newMessageText}/>
+			<button onClick={addNewMessage} disabled={statusBtnMessage}>&#8629;</button>
 		</div>
 	)
 }
