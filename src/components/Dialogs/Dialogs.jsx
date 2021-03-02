@@ -6,11 +6,10 @@ import AddNewMessage from "./AddNewMessage/AddNewMessage";
 
 const Dialogs = (props) => {
 	document.title = 'Samurai - Сообщения';
-	let dialogsElement = props.state.dialogs.map((d, i) =>
+	let dialogsElement = props.dialogs.map((d, i) =>
 		<DialogItem key={`dialog${i}`} name={d.name} id={d.id}/>
 	);
-debugger;
-	let messagesElement = props.state.messages.map((m, i) =>
+	let messagesElement = props.messages.map((m, i) =>
 		<Message key={`message${i}`} message={m.message} type={m.type}/>
 	);
 
@@ -20,10 +19,10 @@ debugger;
 				{dialogsElement}
 			</div>
 			<div className={s.messages}>
-				{ messagesElement }
-				<AddNewMessage newMessageText={props.state.newMessageText}
-							   statusBtnMessage={props.state.disableBntMessage}
-							   dispatch={props.dispatch}/>
+				{messagesElement}
+				<AddNewMessage newText={props.newText} statusBtnMessage={props.statusBtnMessage}
+							   addNewMessage={props.addNewMessage} onMessageChange={props.onMessageChange}
+				/>
 			</div>
 		</div>
 	)

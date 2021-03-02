@@ -1,23 +1,20 @@
 import React from 'react';
 import s from "./AddNewMessage.module.css";
-import {addMessageActionCreator, changeMessageTextActionCreator} from "../../../redux/dialogsReducer";
 
 const AddNewMessage = (props) => {
-	let newMessageText = props.newMessageText;
-	let statusBtnMessage = props.statusBtnMessage;
 	let addNewMessage = () => {
-		props.dispatch(addMessageActionCreator());
+		props.addNewMessage();
 	}
 	let onMessageChange = (e) => {
 		let newText = e.target.value;
-		props.dispatch(changeMessageTextActionCreator(newText));
+		props.onMessageChange(newText);
 	}
 
 	return (
 		<div className={s.inputMessage}>
 			<textarea onChange={onMessageChange} placeholder='Введите сообщение...' rows='1'
-					  value={newMessageText}/>
-			<button onClick={addNewMessage} disabled={statusBtnMessage}>&#8629;</button>
+					  value={props.newText}/>
+			<button onClick={addNewMessage} disabled={props.statusBtnMessage}>&#8629;</button>
 		</div>
 	)
 }

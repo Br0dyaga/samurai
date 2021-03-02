@@ -15,7 +15,6 @@ let initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
-	debugger;
 	switch (action.type) {
 		case ADD_POST:
 			let new_id = state.posts.length + 1;
