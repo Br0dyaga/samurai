@@ -4,9 +4,7 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-	let postsElement = props.posts.map((p, i) =>
-		<Post key={`post${i}`} message={p.message} like={p.like} dislike={p.dislike}/>
-	);
+	let postsElement = props.profilePage.posts.map( p =><Post key={p.id} message={p.message} like={p.like} dislike={p.dislike}/>);
 
 	let addNewPost = () => {
 		props.addNewPost();
@@ -23,8 +21,8 @@ const MyPosts = (props) => {
 			<div>
 				<div className={s.inputMessage}>
 					<textarea onChange={onPostChange} placeholder='Введите сообщение...' rows='1'
-							  value={props.newText}/>
-					<button onClick={addNewPost} disabled={props.statusBtnPost}>&#8629;</button>
+							  value={props.profilePage.newPostText}/>
+					<button onClick={addNewPost} disabled={props.profilePage.disableBntPost}>&#8629;</button>
 				</div>
 			</div>
 			<div className={s.listPosts}>

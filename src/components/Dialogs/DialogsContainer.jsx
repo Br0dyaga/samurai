@@ -1,16 +1,13 @@
-import React from 'react';
 import Dialogs from "./Dialogs";
 import {addMessageActionCreator, changeMessageTextActionCreator} from "../../redux/dialogsReducer";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) =>{
 	return{
-		dialogs: state.dialogsPage.dialogs,
-		messages: state.dialogsPage.messages,
-		newText: state.dialogsPage.newMessageText,
-		statusBtnMessage: state.dialogsPage.disableBntMessage
+		dialogsPage: state.dialogsPage
 	}
 }
+
 let mapDispatchToProps = (dispatch) =>{
 	return{
 		addNewMessage: () => {
