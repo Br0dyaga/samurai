@@ -16,25 +16,30 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case ADD_POST:
-			let new_id = state.posts.length + 1;
-			state.posts.push({
+		case ADD_POST: {
+			let stateCopy = {...state};
+			stateCopy.posts = [...state.posts];
+
+			let new_id = stateCopy.posts.length + 1;
+			stateCopy.posts.push({
 				id: new_id,
-				message: state.newPostText,
+				message: stateCopy.newPostText,
 				like: 0,
 				dislike: 0
 			});
-			state.newPostText = '';
-			state.disableBntPost = (state.newPostText === '');
-			break;
-		case CHANGE_POST_TEXT:
-			state.newPostText = action.newText;
-			state.disableBntPost = (state.newPostText === '');
-			break;
-		default: break;
-	}
+			stateCopy.newPostText = '';
+			stateCopy.disableBntPost = (state.newPostText === '');
+			return stateCopy;
+		}
+		case CHANGE_POST_TEXT: {
+			let stateCopy = {...state};
 
-	return state;
+			stateCopy.newPostText = action.newText;
+			stateCopy.disableBntPost = (stateCopy.newPostText === '');
+			return stateCopy
+		}
+		default: return state;
+	}
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST});
