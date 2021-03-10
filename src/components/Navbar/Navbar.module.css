@@ -8,7 +8,7 @@
     list-style: none;
 }
 
-.nav ul li:last-child {
+.nav ul li:nth-last-of-type(1), .nav ul li:nth-last-of-type(2) {
     margin-top: 3rem;
 }
 

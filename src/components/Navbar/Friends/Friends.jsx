@@ -6,9 +6,9 @@ const Friends = (props) => {
 
 	let imgpath = window.location.origin + '/images/';
 
-	let friendsElements = props.users.map((u, i) => {
+	let friendsElements = props.users.map(u => {
 		return (
-			<NavLink key={`users${i}`} to={`/dialogs/${u.id}`} className={s.user}>
+			<NavLink key={u.id} to={`/dialogs/${u.id}`} className={s.user}>
 				<img className={s.ava} src={imgpath + u.id + '.jpg'} alt={u.name} title={u.name}/>
 				<div className={s.name}>{u.name}</div>
 			</NavLink>

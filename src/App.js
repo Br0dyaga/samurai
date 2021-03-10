@@ -9,6 +9,7 @@ import Settings from './components/Settings/Settings';
 import Footer from "./components/Footer/Footer";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 let App = () => {
 	return (
@@ -21,6 +22,7 @@ let App = () => {
 				<Route path='/dialogs' component={DialogsContainer}/>
 				<Route path='/news' component={News}/>
 				<Route path='/music' component={Music}/>
+				<Route path='/users' render={ () => <UsersContainer/> } />
 				<Route path='/settings' component={Settings}/>
 			</div>
 			<Footer/>
