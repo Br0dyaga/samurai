@@ -3,14 +3,14 @@ const SET_USERS = 'SET-USERS';
 
 let initialState = {
 	users: [
-		{id: 1, followed: true, fullName: 'SName1 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 2, followed: true, fullName: 'SName2 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 3, followed: false, fullName: 'SName3 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 4, followed: false, fullName: 'SName4 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 5, followed: false, fullName: 'SName5 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 6, followed: true, fullName: 'SName6 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 7, followed: false, fullName: 'SName7 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
-		{id: 8, followed: true, fullName: 'SName8 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 1, followed: true, fullName: 'SName1 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 2, followed: true, fullName: 'SName2 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 3, followed: false, fullName: 'SName3 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 4, followed: false, fullName: 'SName4 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 5, followed: false, fullName: 'SName5 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 6, followed: true, fullName: 'SName6 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 7, followed: false, fullName: 'SName7 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
+		// {id: 8, followed: true, fullName: 'SName8 N.', status: 'some status text...', location: {city: 'City', country: 'Country'}},
 	]
 };
 
