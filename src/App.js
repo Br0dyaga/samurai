@@ -17,7 +17,7 @@ let App = () => {
 			<Header/>
 			<NavbarContainer />
 			<div className='app-wrapper-content'>
-				<Redirect exact from='/' to='/profile'/>
+				{/*<Redirect exact from='/' to='/profile'/>*/}
 				<Route path='/profile' component={Profile}/>
 				<Route path='/dialogs' component={DialogsContainer}/>
 				<Route path='/news' component={News}/>
