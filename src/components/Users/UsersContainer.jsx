@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {setUsersAC, toggleFollowAC} from "../../redux/usersReducer";
+import {clearUsersAC, setPageAC, setTotalUsersAC, setUsersAC, toggleFollowAC} from "../../redux/usersReducer";
 import Users from "./Users";
 
 let mapStateToProps = (state) => {
@@ -9,8 +9,17 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
 	return {
+		setTotalUsers: (totalUsers) => {
+			dispatch(setTotalUsersAC(totalUsers));
+		},
+		setPage: (pageID) => {
+			dispatch(setPageAC(pageID));
+		},
 		setUsers: (users) => {
 			dispatch(setUsersAC(users));
+		},
+		clearUsers: () => {
+			dispatch(clearUsersAC());
 		},
 		toggleFollow: (userID) => {
 			dispatch(toggleFollowAC(userID));

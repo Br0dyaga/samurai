@@ -6,6 +6,22 @@
 .wrapperUser +.wrapperUser {
 	margin-top: 1rem;
 }
+.pagination{
+	width: 100%;
+	text-align: center;
+	color: #d5d5d5;
+	display: flex;
+	gap: .5rem;
+	justify-content: center;
+	margin: 1rem 0;
+}
+.pagination span{
+	cursor: pointer;
+}
+.selectedPage{
+	font-weight: 500;
+	color: #000;
+}
 .user{
 	display: grid;
 	border: 1px solid #d5d5d5;
@@ -13,11 +29,12 @@
 	grid-gap: .5rem;
 	grid-template-columns: 1fr max-content max-content;
 }
-
 .avatar{
+	align-self: center;
+}
+.avatar img{
 	max-width: 64px;
 	height: auto;
-	align-self: center;
 }
 .location{
 	font-weight: 700;
