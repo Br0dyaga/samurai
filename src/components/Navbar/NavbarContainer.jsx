@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from "./Navbar";
 import {connect} from "react-redux";
 
@@ -8,6 +7,4 @@ let mapStateToProps = (state) =>{
 	}
 }
 
-const NavbarContainer = connect(mapStateToProps)(Navbar);
-
-export default NavbarContainer;
+export default connect(mapStateToProps)(Navbar);
