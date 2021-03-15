@@ -7,8 +7,8 @@ import AddNewMessage from "./AddNewMessage/AddNewMessage";
 const Dialogs = (props) => {
 	document.title = 'Samurai - Сообщения';
 
-	let dialogsElement = props.dialogsPage.dialogs.map( d => <DialogItem key={d.id} name={d.name} id={d.id}/>);
-	let messagesElement = props.dialogsPage.messages.map( m => <Message key={m.id} message={m.message} type={m.type}/>);
+	let dialogsElement = props.dialogsPage.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id}/>);
+	let messagesElement = props.dialogsPage.messages.map(m => <Message key={m.id} message={m.message} type={m.type}/>);
 
 	return (
 		<div className={s.content}>
@@ -17,8 +17,9 @@ const Dialogs = (props) => {
 			</div>
 			<div className={s.messages}>
 				{messagesElement}
-				<AddNewMessage newText={props.dialogsPage.newMessageText} statusBtnMessage={props.dialogsPage.disableBntMessage}
-							   addNewMessage={props.addNewMessage} onMessageChange={props.onMessageChange}
+				<AddNewMessage newText={props.dialogsPage.newMessageText}
+							   statusBtnMessage={props.dialogsPage.disableBntMessage}
+							   setNewMessage={props.setNewMessage} setNewMessageText={props.setNewMessageText}
 				/>
 			</div>
 		</div>

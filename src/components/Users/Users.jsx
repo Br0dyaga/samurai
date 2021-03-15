@@ -23,7 +23,7 @@ const Users = (props) => {
 	(endID < pageCount) && pages.push({name: '..>', count: endID + 1});
 
 	let pagesList = pages.map(p =>
-		<span key={p.count} className={(p.count === currentPage) ? s.selectedPage : undefined}
+		<span key={p.count} className={(p.count === currentPage) ? s.selectedPage : null}
 			  onClick={() => (props.onPageChange(p.count))}>{p.name}</span>
 	);
 
@@ -47,7 +47,7 @@ const Users = (props) => {
 		</div>
 	));
 	return (
-		<div>
+		<div className={(props.isFetching) ? s.disabled : null}>
 			<h1>Users:</h1>
 			<div className={s.pagination}>
 				{pagesList}

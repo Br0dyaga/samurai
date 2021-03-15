@@ -16,8 +16,10 @@
     padding: .5rem;
     line-height: 1rem;
     resize: none;
+    border-radius: .5rem;
 }
 
 .inputMessage button {
     font-size: 2rem;
+    border-radius: .5rem;
 }
