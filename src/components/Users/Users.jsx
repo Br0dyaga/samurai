@@ -1,6 +1,7 @@
 import React from 'react';
 import s from "./Users.module.css";
 import avatar from "../../assets/image/noavatar.jpg";
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 	document.title = 'Samurai - Найти пользователя';
@@ -30,7 +31,9 @@ const Users = (props) => {
 	let usersList = props.users.map(u => (
 		<div key={u.id} className={s.wrapperUser}>
 			<div className={s.avatar}>
-				<img src={(u.photos.small != null) ? u.photos.small : avatar} alt={u.name} title={u.name}/>
+				<NavLink to={`/profile/${u.id}`}>
+					<img src={(u.photos.small != null) ? u.photos.small : avatar} alt={u.name} title={u.name}/>
+				</NavLink>
 			</div>
 			<div className={s.user}>
 				<div>

@@ -1,27 +1,37 @@
 .profile__pict img {
-	width: 100%;
-	height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .title {
-	display: grid;
-	grid-template-columns: 2fr 10fr;
-	align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    align-items: center;
 }
 
 .title__ava {
-	justify-self: center;
+    justify-self: center;
 }
 
 .title__ava img {
-	max-width: 128px;
-	max-height: 128px;
+    max-width: 128px;
+    max-height: 128px;
 }
 
 .title__desc {
-	margin: 10px;
+    margin: 10px;
 }
 
 .title h1 {
-	padding-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.contacts {
+    margin: 1rem 0;
+}
+.linkContact img{
+    max-width: 36px;
+}
+.linkContact + .linkContact {
+    margin-left: 1rem;
 }

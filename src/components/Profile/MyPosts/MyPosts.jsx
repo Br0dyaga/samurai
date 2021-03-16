@@ -15,7 +15,7 @@ const MyPosts = (props) => {
 							  rows='1'
 							  value={props.profilePage.newPostText}/>
 					<button onClick={() => props.setNewPost()}
-							disabled={props.profilePage.disableBntPost}>&#8629;</button>
+							disabled={props.profilePage.disabledBtnPost}>&#8629;</button>
 				</div>
 			</div>
 			<div className={s.listPosts}>
