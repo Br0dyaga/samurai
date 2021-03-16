@@ -1,7 +1,6 @@
 import React from 'react';
 import pict from "./pict.png";
 import s from './ProfileInfo.module.css'
-import ava from ".././tux.png";
 import FB from '../../../assets/image/facebook.svg';
 import VK from '../../../assets/image/vk.svg';
 import Instagram from '../../../assets/image/instagram.svg';
@@ -10,16 +9,18 @@ import Youtube from '../../../assets/image/youtube.svg';
 import github from '../../../assets/image/github.svg';
 import www from '../../../assets/image/www.svg';
 import email from '../../../assets/image/email.svg';
+import yes from '../../../assets/image/yes.svg';
+import no from '../../../assets/image/no.svg';
 import Preloader from "../../common/Preloader/Preloader";
 
 const ProfileInfo = (props) => {
-	if (!props.profile){
-		return <Preloader />
+	if (!props.profile) {
+		return <Preloader/>
 	}
 
 	document.title = 'Samurai - Профиль';
 
-	return(
+	return (
 		<div>
 			<div className={s.profile__pict}>
 				<img src={pict} alt='pict'/>
@@ -32,17 +33,26 @@ const ProfileInfo = (props) => {
 					<h1>{props.profile.fullName}</h1>
 					<h3>{props.profile.aboutMe}</h3>
 					<div className={s.contacts}>
-						<a className={s.linkContact} href={`http://${props.profile.contacts.facebook}`}><img src={FB} alt='' /></a>
-						<a className={s.linkContact} href={props.profile.contacts.vk}><img src={VK} alt=''/></a>
-						<img src={Instagram} alt=''/>{props.profile.contacts.instagram}
-						<img src={Twitter} alt=''/> {props.profile.contacts.twitter}
-						<img src={Youtube} alt=''/> {props.profile.contacts.youtube}
-						<img src={www} alt=''/> {props.profile.contacts.website}
-						<img src={github} alt=''/> {props.profile.contacts.github}
-						<img src={email} alt=''/> {props.profile.contacts.mainLink}
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.facebook)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.facebook}`}><img src={FB} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.vk)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.vk}`}><img src={VK} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.instagram)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.instagram}`}><img src={Instagram} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.twitter)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.twitter}`}><img src={Twitter} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.youtube)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.youtube}`}><img src={Youtube} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.website)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.website}`}><img src={www} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.github)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.github}`}><img src={github} alt=''/></a>
+						<a className={`${s.linkContact} ${(!(props.profile.contacts.mainLink)) ? s.disabledLinkContact : null}`}
+						   href={`http://${props.profile.contacts.mainLink}`}><img src={email} alt=''/></a>
 					</div>
-					<div>
-						{props.profile.lookingForAJob} - {props.profile.lookingForAJobDescription}
+					<div className={s.job}>
+						Need work:
+						{(!(props.profile.lookingForAJob)) ? <img src={no} alt=''/> : <img src={yes} alt=''/>}
 					</div>
 
 				</div>

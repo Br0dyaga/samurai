@@ -32,6 +32,19 @@
 .linkContact img{
     max-width: 36px;
 }
-.linkContact + .linkContact {
+.linkContact + .linkContact{
     margin-left: 1rem;
+}
+.disabledLinkContact{
+    pointer-events: none;
+    opacity: 0.5;
+}
+.job{
+    display: grid;
+    align-items: center;
+    grid-template-columns: max-content max-content max-content max-content;
+    grid-gap: .5rem;
+}
+.job img{
+    max-width: 36px;
 }
