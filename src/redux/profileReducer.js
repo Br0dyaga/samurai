@@ -1,6 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const CHANGE_POST_TEXT = 'CHANGE-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
+const SET_FETCHING = 'SET-FETCHING';
 
 let initialState = {
 	posts: [
@@ -12,12 +13,18 @@ let initialState = {
 		{id: 6, message: 'ooooops)', like: 0, dislike: 123}
 	],
 	profile: null,
+	isFetching: false,
 	newPostText: '',
 	disabledBtnPost: true,
 };
 
 const profileReducer = (state = initialState, action) => {
 	switch (action.type) {
+		case SET_FETCHING:
+			return {
+				...state,
+				isFetching: action.isFetching,
+			}
 		case SET_USER_PROFILE:
 			return {
 				...state,
@@ -50,5 +57,6 @@ const profileReducer = (state = initialState, action) => {
 export const setNewPost = () => ({type: ADD_POST});
 export const setNewPostText = (newText) => ({type: CHANGE_POST_TEXT, newText});
 export const setUserProfile = (userProfile) => ({type: SET_USER_PROFILE, userProfile});
+export const setFetching = (isFetching) => ({type: SET_FETCHING, isFetching});
 
 export default profileReducer;

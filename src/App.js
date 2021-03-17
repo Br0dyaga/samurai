@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header/Header";
 import News from './components/News/News';
@@ -17,8 +17,7 @@ let App = () => {
 			<Header/>
 			<NavbarContainer />
 			<div className='app-wrapper-content'>
-				{/*<Redirect exact from='/' to='/profile'/>*/}
-				<Route exact path='/profile' render={()=> <ProfileContainer />}/>
+				<Route path='/profile/:userID?' render={()=> <ProfileContainer />}/>
 				<Route path='/dialogs' render={()=> <DialogsContainer />} />
 				<Route path='/news' component={News}/>
 				<Route path='/music' component={Music}/>
