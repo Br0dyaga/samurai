@@ -6,6 +6,7 @@ const Profile = (props) => {
 	return (
 		<div>
 			<ProfileInfo profile={props.profile} isFetching={props.isFetching}/>
+			<hr />
 			{((props.profile) && (props.profile.userId === 2)) ? <MyPostsContainer/> : null}
 		</div>
 	);

@@ -2,14 +2,30 @@
     grid-area: header;
     display: grid;
     background-color: var(--main-bg-color);
-    grid-template-columns: max-content auto;
+    grid-template-columns: max-content max-content max-content;
     align-items: center;
     gap: 1rem;
-
+    justify-content: space-between;
+    padding-left: 1rem;
 }
 
 .header img {
     max-width: 60px;
     align-self: center;
-    padding-left: 10px;
+}
+.loginLink{
+    margin-right: 1rem;
+}
+.logoLink{
+    font-size: 0;
+}
+.loginBlock img{
+    vertical-align: middle;
+}
+
+.loginBlock a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
 }
