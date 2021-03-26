@@ -1,6 +1,13 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {setPage, setTotalUsers, setUsers, toggleFollow, setFetching} from "../../redux/usersReducer";
+import {
+	setPage,
+	setTotalUsers,
+	setUsers,
+	setFetching,
+	setFollow,
+	setUnFollow
+} from "../../redux/usersReducer";
 import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
@@ -11,7 +18,9 @@ class UsersContainer extends React.Component {
 		axios.get(
 			`https://social-network.samuraijs.com/api/1.0/users
 			?count=${this.props.usersPage.pageSize}
-			&page=${this.props.usersPage.currentPage}`
+			&page=${this.props.usersPage.currentPage}`, {
+				withCredentials: true
+			}
 		)
 			.then(response => {
 				this.props.setFetching(false);
@@ -25,14 +34,15 @@ class UsersContainer extends React.Component {
 		this.props.setFetching(true);
 		axios.get(
 			`https://social-network.samuraijs.com/api/1.0/users
-			?count=${this.props.usersPage.pageSize}&page=${numberPage}`
+			?count=${this.props.usersPage.pageSize}&page=${numberPage}`, {
+				withCredentials: true
+			}
 		)
 			.then(response => {
 				this.props.setFetching(false);
 				this.props.setUsers(response.data.items);
 				this.props.setTotalUsers(response.data.totalCount);
 			});
-
 	};
 
 	render() {
@@ -44,7 +54,10 @@ class UsersContainer extends React.Component {
 				   totalUsersCount={this.props.usersPage.totalUsersCount}
 				   isFetching={this.props.usersPage.isFetching}
 				   onPageChange={this.onPageChange}
-				   toggleFollow={this.props.toggleFollow}/>
+				   setFollow={this.props.setFollow}
+				   setUnFollow={this.props.setUnFollow}
+				   setFetching={this.props.setFetching}
+			/>
 		</>
 	};
 }
@@ -55,4 +68,5 @@ let mapStateToProps = (state) => {
 	}
 };
 
-export default connect(mapStateToProps, {setTotalUsers, setPage, setUsers, toggleFollow, setFetching})(UsersContainer);
+export default connect(mapStateToProps,
+	{setTotalUsers, setPage, setUsers, setFetching, setFollow, setUnFollow})(UsersContainer);

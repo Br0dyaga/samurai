@@ -1,8 +1,9 @@
-const TOGGLE_FOLLOW = 'TOGGLE-FOLLOW';
 const SET_USERS = 'SET-USERS';
 const SET_TOTAL_USERS = 'SET-TOTAL-USERS';
 const SET_PAGE = 'SET-PAGE';
 const SET_FETCHING = 'SET-FETCHING';
+const SET_FOLLOW = 'SET-FOLLOW';
+const SET_UNFOLLOW = 'SET-UNFOLLOW';
 
 let initialState = {
 	users: [
@@ -36,12 +37,22 @@ const usersReducer = (state = initialState, action) => {
 				...state,
 				users: action.users
 			};
-		case TOGGLE_FOLLOW:
+		case SET_FOLLOW:
 			return {
 				...state,
 				users: state.users.map(u => {
 					if (u.id === action.userID) {
-						return {...u, followed: !u.followed}
+						return {...u, followed: true}
+					}
+					return u;
+				})
+			}
+		case SET_UNFOLLOW:
+			return {
+				...state,
+				users: state.users.map(u => {
+					if (u.id === action.userID) {
+						return {...u, followed: false}
 					}
 					return u;
 				})
@@ -52,9 +63,10 @@ const usersReducer = (state = initialState, action) => {
 }
 
 export const setUsers = (users) => ({type: SET_USERS, users});
-export const toggleFollow = (userID) => ({type: TOGGLE_FOLLOW, userID});
 export const setTotalUsers = (totalUsers) => ({type: SET_TOTAL_USERS, totalUsers});
 export const setPage = (pageID) => ({type: SET_PAGE, pageID});
 export const setFetching = (isFetching) => ({type: SET_FETCHING, isFetching});
+export const setFollow = (userID) => ({type: SET_FOLLOW, userID});
+export const setUnFollow = (userID) => ({type: SET_UNFOLLOW, userID});
 
 export default usersReducer;

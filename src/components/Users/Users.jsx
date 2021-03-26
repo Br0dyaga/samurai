@@ -2,6 +2,7 @@ import React from 'react';
 import s from "./Users.module.css";
 import avatar from "../../assets/image/noavatar.jpg";
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 const Users = (props) => {
 	document.title = 'Samurai - Найти пользователя';
@@ -41,11 +42,58 @@ const Users = (props) => {
 					<h3>{u.status}</h3>
 				</div>
 				<div className={s.location}>{'u.location.country'}, <br/>{'u.location.city'}</div>
-				<div onClick={() => {
-					props.toggleFollow(u.id)
-				}} className={`${s.btnfollow} ${(u.followed) ? s.unfollow : s.follow}`}>
-					{(u.followed) ? 'Unfollow' : 'Follow'}
-				</div>
+
+				{u.followed
+					? <div onClick={() => {
+						props.setFetching(true);
+						axios.delete(
+							`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+								withCredentials: true,
+								headers: {
+									'API-KEY' : '88ff1343-e274-43f3-b7de-1fee880b0a62'
+								}
+							}
+						)
+							.then(response => {
+									if ((response.status===200) && (response.data.resultCode === 0)) {
+										props.setFetching(false);
+										props.setUnFollow(u.id);
+									} else {
+										alert(`Что-то не так ${response.data.messages}`);
+										props.setFetching(false);
+									}
+								}
+							)
+							.catch((error) => {
+								alert(error);
+								props.setFetching(false);
+							});
+					}} className={`${s.unfollow} ${s.btnfollow}`}>Unfollow</div>
+					: <div onClick={() => {
+						props.setFetching(true);
+						debugger
+						axios.post(
+							`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+								withCredentials: true,
+								headers: {
+									'API-KEY' : '88ff1343-e274-43f3-b7de-1fee880b0a62'
+								}
+							}
+						)
+							.then(response => {
+								if ((response.status===200) && (response.data.resultCode === 0)) {
+									props.setFetching(false);
+									props.setFollow(u.id);
+								} else {
+									alert(`Что-то не так ${response.data.messages}`);
+									props.setFetching(false);
+								}
+							})
+							.catch((error) => {
+								alert(error);
+								props.setFetching(false);
+							});
+					}} className={`${s.follow} ${s.btnfollow}`}>Follow</div>}
 			</div>
 		</div>
 	));
