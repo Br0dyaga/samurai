@@ -3,6 +3,7 @@ import s from "./Users.module.css";
 import avatar from "../../assets/image/noavatar.jpg";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
+// import {followAPI} from "../../api/api";
 
 const Users = (props) => {
 	document.title = 'Samurai - Найти пользователя';
@@ -38,7 +39,7 @@ const Users = (props) => {
 			</div>
 			<div className={s.user}>
 				<div>
-					<h2>{u.name}</h2>
+					<NavLink to={`/profile/${u.id}`}><h2>{u.name}</h2></NavLink>
 					<h3>{u.status}</h3>
 				</div>
 				<div className={s.location}>{'u.location.country'}, <br/>{'u.location.city'}</div>
@@ -46,6 +47,23 @@ const Users = (props) => {
 				{u.followed
 					? <div onClick={() => {
 						props.setFetching(true);
+						// followAPI.setUnfollow(u.id)
+						// 	.then(response => {
+						// 			if ((response.status===200) && (response.data.resultCode === 0)) {
+						// 				props.setFetching(false);
+						// 				props.setUnFollow(u.id);
+						// 			} else {
+						// 				alert(`Что-то не так ${response.data.messages}`);
+						// 				props.setFetching(false);
+						// 			}
+						// 		}
+						// 	)
+						// 	.catch((error) => {
+						// 		alert(error);
+						// 		props.setFetching(false);
+						// 	});
+
+						//
 						axios.delete(
 							`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
 								withCredentials: true,
@@ -71,7 +89,6 @@ const Users = (props) => {
 					}} className={`${s.unfollow} ${s.btnfollow}`}>Unfollow</div>
 					: <div onClick={() => {
 						props.setFetching(true);
-						debugger
 						axios.post(
 							`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
 								withCredentials: true,

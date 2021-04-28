@@ -44,6 +44,9 @@
 .user h2{
 	margin: .5rem 0 2rem .5rem;
 }
+.user h2 a{
+	text-decoration: none;
+}
 .user h3{
 	margin: 0 0 .5rem .5rem;
 	color: #d5d5d5;
